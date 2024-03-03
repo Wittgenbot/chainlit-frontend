@@ -3,6 +3,11 @@ from utils.chat_profiles import cohere_command_chat_profile, foo_bar_chat_profil
 from utils.cohere import query_cohere
 from utils.foo_bar import query_foo_bar
 
+@cl.oauth_callback
+def oauth_callback(provider_id, token, raw_user_data, default_user):
+    return default_user
+
+
 @cl.set_chat_profiles
 async def list_chat_profiles():
     return [cohere_command_chat_profile, foo_bar_chat_profile]
