@@ -1,6 +1,6 @@
 import chainlit as cl
 from utils.chat_profiles import ded_512, ded_1500, cohere_command_chat_profile, foo_bar_chat_profile
-from utils.query_model import ChatProfile, query_chat_profile
+from src.query_model import ChatProfile, query_chat_profile
 
 @cl.oauth_callback
 def oauth_callback(provider_id, token, raw_user_data, default_user):
