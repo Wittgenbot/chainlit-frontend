@@ -1,25 +1,25 @@
 from chainlit import ChatProfile
 
-ded_512 = ChatProfile(
-    name='DED-0.5K',
-    markdown_description='ChatDED 512',
-    icon='https://picsum.photos/110',
+witt_0p5k_chat_profile = ChatProfile(
+    name='WITT-0.5K',
+    markdown_description='Wittgenbot with a context length of 512.',
+    icon='/public/WITT-0.5K_icon.png',
 )
 
-ded_1500 = ChatProfile(
-    name='DED-1.5K',
-    markdown_description='ChatDED 1500',
-    icon='https://picsum.photos/110',
+witt_1p5k_chat_profile = ChatProfile(
+    name='WITT-1.5K',
+    markdown_description='Wittgenbot with a context length of 1500.',
+    icon='/public/WITT-1.5K_icon.png',
 )
 
 cohere_command_chat_profile = ChatProfile(
     name='Command',
-    markdown_description='Command is Cohere\'s flagship text generation model.',
-    icon='/public/Cohere_logo.svg',
+    markdown_description='Cohere\'s flagship text generation model.',
+    icon='/public/cohere_icon.png',
 )
 
 foo_bar_chat_profile = ChatProfile(
     name='FooBar',
     markdown_description='FooBar model',
-    icon='https://picsum.photos/100',
+    icon='/public/foo_bar_icon.png',
 )

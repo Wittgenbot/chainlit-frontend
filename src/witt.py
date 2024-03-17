@@ -19,19 +19,21 @@ async def generate_step_output(documents):
 
     step_output = ''
     for source, frequency in source_frequency.items():
-        source_parts = source.split('/')[-1].rstrip('.txt')
-        step_output += f'- **{frequency} excerpts** from `{source_parts}`\n\n'
+        source_parts = source.split('/')[-1].rstrip('.txt').split(' by ')
+        book_name = source_parts[0]
+        author_name = source_parts[1] if len(source_parts) > 1 else 'Unknown'
+        step_output += f'- **{frequency} {'excerpt' if frequency == 1 else 'excerpts'}** from `{book_name}` by {author_name}\n\n'
 
     return step_output
 
 
 @cl.step(name='Semantic Search')
-async def find_semantically_similar_documents(question, ded_profile, num_matched_excerpts):
+async def find_semantically_similar_documents(question, witt_profile, num_matched_excerpts):
 
-    match ded_profile:
-        case ChatProfile.DED_512_50:
+    match witt_profile:
+        case ChatProfile.WITT_512_50:
             index_type = { 'chunk_size': 512, 'chunk_overlap': 50 }
-        case ChatProfile.DED_1500_300:
+        case ChatProfile.WITT_1500_300:
             index_type = { 'chunk_size': 1500, 'chunk_overlap': 300 }
 
     documents = await semantic_search(question, index_type, num_matched_excerpts)
@@ -74,7 +76,7 @@ async def query_model(prompt):
     return response
 
 
-async def query_ded(question, chat_profile):
+async def query_witt(question, chat_profile):
     semantically_similar_documents = await find_semantically_similar_documents(question, chat_profile, num_matched_excerpts=25)
     reranked_documents = await rerank_excerpts(question, semantically_similar_documents, num_reranked_excerpts=3)
     prompt = await create_prompt(question, reranked_documents)

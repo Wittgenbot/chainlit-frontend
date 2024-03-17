@@ -4,9 +4,9 @@ import os
 
 async def query_cohere(prompt):
 
-    prompt = f'In the context of Ludwig Wittgenstein philosophy, answer the following question: {prompt}'
+    prompt = f'In the context of Ludwig Wittgenstein\'s Philosophical Investigations, answer the following question: {prompt}'
 
-    co = cohere_api.Client(os.getenv('COHERE_API_KEY'))
+    co = cohere.Client(os.getenv('COHERE_API_KEY'))
 
     try:
         cohere_chat_async = cl.make_async(co.chat)

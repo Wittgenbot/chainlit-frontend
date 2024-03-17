@@ -2,7 +2,7 @@ import asyncio
 import random
 from utils.chat_profiles_enum import ChatProfile
 from src.cohere_api import query_cohere
-from src.ded import query_ded
+from src.witt import query_witt
 from src.foo_bar import query_foo_bar
 
 async def stream_output(response):
@@ -20,10 +20,10 @@ async def query_chat_profile(question, chat_profile):
     response = ''
 
     match chat_profile:
-        case ChatProfile.DED_512_50:
-            response = await query_ded(question, ChatProfile.DED_512_50)
-        case ChatProfile.DED_1500_300:
-            response = await query_ded(question, ChatProfile.DED_1500_300)
+        case ChatProfile.WITT_512_50:
+            response = await query_witt(question, ChatProfile.WITT_512_50)
+        case ChatProfile.WITT_1500_300:
+            response = await query_witt(question, ChatProfile.WITT_1500_300)
         case ChatProfile.COHERE:
             response = await query_cohere(question)
         case ChatProfile.FOO_BAR:
