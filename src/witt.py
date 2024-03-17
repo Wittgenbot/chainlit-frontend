@@ -22,7 +22,7 @@ async def generate_step_output(documents):
         source_parts = source.split('/')[-1].rstrip('.txt').split(' by ')
         book_name = source_parts[0]
         author_name = source_parts[1] if len(source_parts) > 1 else 'Unknown'
-        step_output += f'- **{frequency} {'excerpt' if frequency == 1 else 'excerpts'}** from `{book_name}` by {author_name}\n\n'
+        step_output += f"- **{frequency} {'excerpt' if frequency == 1 else 'excerpts'}** from `{book_name}` by {author_name}\n\n"
 
     return step_output
 
