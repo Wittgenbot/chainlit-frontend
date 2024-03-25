@@ -28,12 +28,12 @@ Below are some sample questions related to Wittgenstein's work that you could as
 We offer the following models:
 
 - **WITT-0.5K**: Utilizes a RAG chain with
-  - Context length (<span style="font-size: 16px;">`chunk_size`</span>) *512* tokens and (<span style="font-size: 16px;">`chunk_overlap`</span>) *50* tokens.
+  - Context length (<span style="font-size: 16px;">`chunk_size`</span>) of *512* tokens and overlap (<span style="font-size: 16px;">`chunk_overlap`</span>) of *50* tokens.
   - Model **Mistral-7B-Instruct-v0.2**.
   - Shorter inference time but higher risk of inaccurate answers.<br><br>
 
 - **WITT-1.5K**: Utilizes a RAG chain with
-  - Context length (<span style="font-size: 16px;">`chunk_size`</span>) *1500* tokens and (<span style="font-size: 16px;">`chunk_overlap`</span>) *300* tokens.
+  - Context length (<span style="font-size: 16px;">`chunk_size`</span>) of *1500* tokens and overlap (<span style="font-size: 16px;">`chunk_overlap`</span>) of *300* tokens.
   - Model **Mistral-7B-Instruct-v0.2**.
   - Longer inference time but lower risk of inaccurate answers.<br><br>
   
