@@ -2,7 +2,7 @@
 
 <span style="font-size: 18px;">
     <img src="/public/readme_image.png" alt="Sample Image" style="float: right; margin-right: 10px; width: 50%">
-    Welcome to <b>Wittgenbot</b>, your chatbot companion for exploring Ludwig Wittgenstein's <i>Philosophical Investigations</i>.
+    Welcome to <b>Wittgenbot</b>, your chatbot companion for exploring Ludwig Wittgenstein's philosophy.
 </span>
 <br>
 
@@ -59,7 +59,7 @@ The question-answer procedure is outlined below:
 
 <span style="font-size: 18px;">
 
-Academic secondary sources about **Ludwig Wittgenstein's _Philosophical Investigations_ (1953)** were collected in bulk via [CORE API](https://core.ac.uk/services/api). This work was chosen alone to facilitate manual and automated testing due to limited resources. However, the benefits of RAG allow us to expand the chatbot's knowledge-base to include other philosophers by simply collecting more relevant secondary sources through CORE and storing them in our vector database.
+Academic secondary sources about Ludwig Wittgenstein's **_Tractatus Logico-Philosophicus_ (1921)** and **_Philosophical Investigations_ (1953)** were collected in bulk via [CORE API](https://core.ac.uk/services/api). This work was chosen alone to facilitate manual and automated testing due to limited resources. However, the benefits of RAG allow us to expand the chatbot's knowledge-base to include other philosophers by simply collecting more relevant secondary sources through CORE and storing them in our vector database.
 
 </span>
 
