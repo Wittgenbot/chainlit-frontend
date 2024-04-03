@@ -1,9 +1,9 @@
 import asyncio
 import random
-from utils.chat_profiles_enum import ChatProfile
 from src.cohere_api import query_cohere
-from src.witt import query_witt
 from src.foo_bar import query_foo_bar
+from src.witt import query_witt
+from utils.chat_profiles_enum import ChatProfile
 
 async def stream_output(response):
     words = response.split(' ')

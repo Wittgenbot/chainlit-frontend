@@ -21,21 +21,13 @@ async def query_cohere(prompt):
 
 async def cohere_rerank_excerpts(question, documents, num_reranked_excerpts):
 
-    text_to_source = { doc['text'] : doc['source'] for doc in documents }
-
     co = cohere.Client(os.getenv('COHERE_API_KEY'))
     cohere_rerank_async = cl.make_async(co.rerank)
-    reranked_docs = await cohere_rerank_async(query=question,
-                                              documents=[ doc['text'] for doc in documents ],
-                                              top_n=num_reranked_excerpts,
-                                              model='rerank-english-v2.0')
+    reranked_response = await cohere_rerank_async(query=question,
+                                                  documents=[ doc['text'] for doc in documents ],
+                                                  top_n=num_reranked_excerpts,
+                                                  model='rerank-english-v2.0')
 
-    reranked_texts = [ doc.document['text'] for doc in reranked_docs ]
-    docs = [
-        {
-          'text': text,
-          'source': text_to_source[text]
-        } for text in reranked_texts
-    ]
+    reranked_documents = [ documents[result.index] for result in reranked_response.results ]
 
-    return docs
+    return reranked_documents

@@ -1,6 +1,7 @@
-import modal
-import asyncio, nest_asyncio
+import asyncio
 import chainlit as cl
+import modal
+import nest_asyncio
 
 try:
     asyncio.get_event_loop()

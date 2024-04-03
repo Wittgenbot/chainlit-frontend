@@ -1,11 +1,9 @@
 import chainlit as cl
-from langchain.embeddings.huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
-import textwrap
 from src.cohere_api import cohere_rerank_excerpts
-from utils.chat_profiles_enum import ChatProfile
 from src.mistral_7b_intruct_v0p2 import query_mistral
 from src.semantic_search import semantic_search
+import textwrap
+from utils.chat_profiles_enum import ChatProfile
 
 async def generate_step_output(documents):
 
