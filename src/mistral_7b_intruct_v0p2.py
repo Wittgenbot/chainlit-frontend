@@ -16,4 +16,5 @@ async def query_mistral(prompt):
 
     modal_query_async = cl.make_async(query_mistral_7b_instruct_v0p2.remote)
     response = await modal_query_async(prompt)
+
     return response
