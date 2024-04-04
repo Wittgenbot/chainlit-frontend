@@ -31,7 +31,7 @@ async def find_semantically_similar_documents(question, wittgenbot_profile, num_
     match wittgenbot_profile:
         case ChatProfile.WITTGENBOT_512_50:
             index_type = { 'chunk_size': 512, 'chunk_overlap': 50 }
-        case ChatProfile.wittgenbot_1500_300:
+        case ChatProfile.WITTGENBOT_1500_300:
             index_type = { 'chunk_size': 1500, 'chunk_overlap': 300 }
 
     documents = await semantic_search(question, index_type, num_matched_excerpts)
