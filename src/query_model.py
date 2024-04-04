@@ -22,9 +22,9 @@ async def query_chat_profile(question, chat_profile):
         case ChatProfile.WITTGENBOT_FT:
             response = await query_wittgenbot_ft(question)
         case ChatProfile.WITTGENBOT_512_50:
-            response = await query_wittgenbot_rag(question, ChatProfile.wittgenbot_512_50)
+            response = await query_wittgenbot_rag(question, ChatProfile.WITTGENBOT_512_50)
         case ChatProfile.WITTGENBOT_1500_300:
-            response = await query_wittgenbot_rag(question, ChatProfile.wittgenbot_1500_300)
+            response = await query_wittgenbot_rag(question, ChatProfile.WITTGENBOT_1500_300)
 
     async for word in stream_output(response):
         yield word

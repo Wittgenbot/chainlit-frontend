@@ -29,7 +29,7 @@ async def generate_step_output(documents):
 async def find_semantically_similar_documents(question, wittgenbot_profile, num_matched_excerpts):
 
     match wittgenbot_profile:
-        case ChatProfile.wittgenbot_512_50:
+        case ChatProfile.WITTGENBOT_512_50:
             index_type = { 'chunk_size': 512, 'chunk_overlap': 50 }
         case ChatProfile.wittgenbot_1500_300:
             index_type = { 'chunk_size': 1500, 'chunk_overlap': 300 }
